@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to bottom right, coral, rgb(168, 18, 91));
+}
+.container{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.middle{
+    text-align: center;
+}
+
+h1{
+    margin-top: 20px;
+    font-size: 60px;
+    color: white;
+    font-style: bold;
+    filter: drop-shadow(0px 0px 10px #fff);
+}
+
+h2{
+    
+    font-size: 20px;
+    color: white;
+    font-style: bold;
+    filter: drop-shadow(2px 0px 5px #fff);
+}
+
+.input{
+    display: flex;
+    height: 90px;
+    /* background-color: red; */
+}
+
+.input1{
+    margin-right: 200px;
+
+}
+.input1 p{
+    margin-bottom: 10px;
+    font-family: cursive;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    filter: drop-shadow(2px 0px 5px #fff);
+}
+.input2 p{
+    margin-bottom: 10px;
+    font-family: cursive;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    filter: drop-shadow(2px 0px 5px #fff);
+}
+
+#yourname{
+    border: 2px solid pink;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+#hisname{
+    border: 2px solid pink;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+#calc{
+    width: 100px;
+    color: #fff;
+    background-color: rgb(168, 18, 91);
+    filter: drop-shadow(2px 0px 5px #fff);
+    height: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.bold{
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
+    text-decoration: underline;
+    filter: drop-shadow(2px 0px 5px black);
+}
+
+#result1{
+    text-align: center;
+    margin-top: 10px;
+    /* font-family:  sans-serif; */
+    font-weight: 200;
+    text-transform: uppercase;
+    color: white;
+    filter: drop-shadow(0px 0px 3px #fff);
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .input{
+        flex-direction: column;
+    }
+
+    .input1,
+    .input2 {
+        margin: 0;
+        width: 100%;
+    }
+
+    #calc {
+        /* width: 100%; */
+        margin-top: 60px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .input1 p,
+    .input2 p {
+        font-size: 0.8rem;
+    }
+
+    #yourname,
+    #hisname {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #calc {
+        font-size: 0.9rem;
+    }
+
+    .bold {
+        font-size: 1rem;
+    }
+
+    #result1 {
+        font-size: 0.9rem;
+    }
+}

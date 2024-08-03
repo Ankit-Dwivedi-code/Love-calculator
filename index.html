@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="middle">Love ♥︎ Calulator</h1>
+    <h2 class="middle">Love is in the air..</h2>
+    <div class="container">
+        <div class="input">
+            <div class="input1">
+                <p>Your name</p>
+                <input type="text" name="" id="yourname">
+            </div>
+            <div class="input2">
+                <p>Her/His name</p>
+                <input type="text" name="" id="hisname">
+            </div>
+        </div>
+        <button id="calc" onclick="showresult()">♥︎Calculate♥︎</button>
+        <p class="bold">Result</p>
+        <p id="result1"></p>
+    </div>
+</body>
+<script>
+    let yourname = document.getElementById("yourname");
+    let hisname = document.getElementById("hisname");
+    let result1 = document.getElementById("result1")
+    
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '52a816e6d8msh66025b30f113e4ep1f9e17jsnbe4d34b7c3bb',
+            'X-RapidAPI-Host': 'love-calculator.p.rapidapi.com'
+        }
+    };
+
+    let run = async () => {
+        try {
+            const url = `https://love-calculator.p.rapidapi.com/getPercentage?sname=${yourname.value}&fname=${hisname.value}`;
+            const response = await fetch(url, options);
+            const result = await response.json();
+            
+            console.log(result);
+            return result
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    let showresult = async()=>{
+        result1.innerHTML = '';
+        let res = await run();
+        result1.innerHTML = await result1.innerHTML + res.percentage +"%" +"<br> "+ res.result;
+    }
+    run();
+
+
+</script>
+
+</html>
